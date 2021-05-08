@@ -252,7 +252,7 @@ function animate() {
  
  if(cont){
    //Every 10 frames bird is updated to show its next frame
-  if (frames == 0 || frames % 10 == 0) {
+  if (frames == 0 || frames % 5 == 0) {
     
     if(pic<=3){
       pic+=1;
