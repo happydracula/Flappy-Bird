@@ -277,7 +277,7 @@ if(gameOver){ //Text that displays only when gameOver
    startGame=true;
    }
 bird.update();
- }, 5);
+ }, 0);
 
 //Collision Checking for each obstacle
  for(var i=0;i<obstacles.length;i++){
