@@ -241,6 +241,19 @@ function animate() {
   }
     setTimeout(function () {
       gameScreen("")
+      c.font = "50px Cursive";
+      c.fillStyle = "white";
+      c.strokeStyle = "black";
+      c.fillText(`${score}`, bird.x, 100);
+      c.strokeText(`${score}`, bird.x, 100);
+      if (gameOver) {
+        //Text that displays only when gameOver
+        c.font = "40px Cursive";
+        c.fillText("Hit SpaceBar To ReStart!", bird.x - 200, 300);
+        c.strokeText("Hit SpaceBar To ReStart!", bird.x - 200, 300);
+        startGame = true;
+      }
+      bird.update();
     }, 0);
     if(frames==0||frames%100==0){ //Every 100 frames new stripes are formed
    stripeInit();
@@ -252,7 +265,7 @@ function animate() {
  
  if(cont){
    //Every 10 frames bird is updated to show its next frame
-  if (frames == 0 || frames % 5 == 0) {
+  if (frames == 0 || frames % 15 == 0) {
     
     if(pic<=3){
       pic+=1;
@@ -263,21 +276,21 @@ function animate() {
     bird.index=pic;
 }
  }
- setTimeout(function () {
-   //Score Display
-   c.font="50px Cursive";
-   c.fillStyle="white"
-   c.strokeStyle="black"
-   c.fillText(`${score}`,bird.x,100);
-   c.strokeText(`${score}`, bird.x, 100);
-if(gameOver){ //Text that displays only when gameOver
-   c.font = "40px Cursive";
-   c.fillText("Hit SpaceBar To ReStart!", bird.x - 200, 300);
-   c.strokeText("Hit SpaceBar To ReStart!", bird.x - 200, 300);
-   startGame=true;
-   }
-bird.update();
- }, 0);
+//  setTimeout(function () {
+//    //Score Display
+//    c.font="50px Cursive";
+//    c.fillStyle="white"
+//    c.strokeStyle="black"
+//    c.fillText(`${score}`,bird.x,100);
+//    c.strokeText(`${score}`, bird.x, 100);
+// if(gameOver){ //Text that displays only when gameOver
+//    c.font = "40px Cursive";
+//    c.fillText("Hit SpaceBar To ReStart!", bird.x - 200, 300);
+//    c.strokeText("Hit SpaceBar To ReStart!", bird.x - 200, 300);
+//    startGame=true;
+//    }
+// bird.update();
+//  }, 0);
 
 //Collision Checking for each obstacle
  for(var i=0;i<obstacles.length;i++){
